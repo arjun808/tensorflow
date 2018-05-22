@@ -141,6 +141,10 @@ def train_model(learning_rate, steps, batch_size, input_feature="total_rooms"):
     display.display(calibration_data.describe())
 
     print("Final RMSE (on training data): %0.2f" % root_mean_squared_error)
+    plt.figure(figsize=(15, 6))
+    plt.subplot(1, 2, 1)
+    plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+    plt.show()
 
 train_model(
     learning_rate=0.0002,
